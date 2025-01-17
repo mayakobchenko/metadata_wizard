@@ -1,0 +1,8 @@
+[
+  {
+    "event": "post json to backend",
+    "data": {
+      "test": "hello from frontend"
+    }
+  }
+]

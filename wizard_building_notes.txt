@@ -1,0 +1,76 @@
+DEv wizard is here:
+https://github.com/ehennestad/ebrains_wizard_eh/tree/dev
+https://metadata-wizard-dev.apps.ebrains.eu
+
+forked from prod:
+PROD:
+https://github.com/HumanBrainProject/ebrains_wizard
+
+Full stack SPA single-page app using react for front end and express node server for backend.
+
+$ cd server
+$ npm init -y
+$ cd ..
+$ npx create-react-app frontend
+
+some errors when installing react:
+A complete log of this run can be found in: 
+C:\Users\mayaek\AppData\Local\npm-cache\_logs\2025-01-15T13_51_30_380Z-debug-0.log
+
+application structure:
+
+the backend express server entry point is app.js
+
+added "type":"module" to ensure ES8 
+$ cd server
+$ npm install express
+$ npm install cors
+$ npm install winston
+$ npm install dotenv
+
+
+to check what is globally installed:
+$ npm list -g --depth=0
+locally installed: 
+$ npm list --depth=0
+
+to instally localy as a development dependency dependency:
+$ npm install --save-dev nodemon
+
+$ npm install @babel/plugin-proposal-private-property-in-object --save-dev
+
+clean node_modules folder and reinstall dependencies (optional):
+$ rm -rf node_modules
+$ rm package-lock.json  # or yarn.lock
+$ npm install
+-------------------------------
+
+i removed all webVitals and the webvitals.js file 
+the defaukt app.css is placed inside default_react folder
+
+---------------------------
+at deployment:  
+
+to setup dependencies: 
+cd server
+npm install
+cd frontend
+npm install
+
+/metadata-wizard
+  /frontend
+    /public
+      logo.png
+    /src
+      /components
+        App.js
+  /server
+    /routes
+  .env
+  .gitignore
+  README
+
+At deployment:
+check at the end which files are missing inside the react folder, maybe robots.txt
+Cross-Origin Issues: When backends are accessed by the frontend (e.g., API calls), 
+configure backend CORS policies properly.
