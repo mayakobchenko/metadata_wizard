@@ -115,4 +115,19 @@ react@^19.0.0 react-dom@^19.0.0
 deleted everything from the repo and reinstall react first, then I will integrate express server.
 $ npx create-react-app .
 
+$ cd server
+$ npm init -y
 
+npm notice
+npm notice New major version of npm available! 10.9.0 -> 11.0.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.0.0
+npm notice To update run: npm install -g npm@11.0.0
+npm notice
+
+$ npm install express 
+$ npm install dotenv  
+$ npm install --save-dev nodemon
+$ npm install cors
+$ npm install winston
+
+$ npm run dev
