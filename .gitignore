@@ -1,19 +1,17 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+/default_react_files
 # dependencies
-/frontend/node_modules
 /node_modules
 /.pnp
 .pnp.js
 
-# testing
-/coverage
-
 # production
-frontend/build
+/build
 
 # misc
 .DS_Store
+.env
 .env.local
 .env.development.local
 .env.test.local

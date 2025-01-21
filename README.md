@@ -15,5 +15,4 @@ $body = @{
      data = @{test = "hello from frontend"}
  }
 $jsonBody = $body | ConvertTo-Json
-Invoke-RestMethod -Uri "http://localhost:5000/submit-metadata" -Method POST -Headers $headers -Body $jsonBody
 ```
