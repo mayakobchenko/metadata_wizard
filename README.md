@@ -2,7 +2,7 @@
 
 Mayas edition of updates for both prod wizard and dev wizard.
 
-ES8 module structure of express server for backend and react for frontend. On form submission a json file is sent to the backend endpoint.
+Single Page Application. ES8 module structure of express server for backend and react for frontend. On form submission a json file is sent to the backend endpoint.
 
 To test the backend endpoint for POST requests:
 

@@ -1,3 +1,7 @@
+//was starting with this one but replaced with index.js
+//fix cors at production
+
+/*
 import express from 'express';
 import cors from 'cors'; 
 import { fileURLToPath } from 'url';
@@ -12,21 +16,24 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
+app.use(cors());
+app.use(express.json());
 //just to check that env file loads
-console.log('Loaded variable:', process.env.TOKEN_ENDPOINT_URL);
+//console.log('Loaded variable, port number:', process.env.PORT);
 
 //default settings allows all origins
 // At production specify which origins can access your resources
 // app.use(cors({
 //   origin: 'http://example.com' // front-end domain
 // }));
-app.use(cors());
-app.use(express.json());
 
+const PORT = process.env.PORT_SERVER || 5000;
 app.use((req, res, next) => {
-    logger.info(`${req.method} ${req.url}`);
+    //logger.info(`${req.method} ${req.url}`);
+    console.log(`${req.method} ${req.url}`);
     next();
 });
+
 app.use((err, req, res, next) => {
     logger.error(`Error: ${err.message}`);
     res.status(500).json({ error: 'Internal Server Error' });
@@ -37,6 +44,7 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 async function mainAppPage() {
     return htmlPageContent;
 }
+
 app.get('/', async (req, res, next) => {
     try {
         const data = await mainAppPage();
@@ -47,14 +55,12 @@ app.get('/', async (req, res, next) => {
     }
 });
 
-app.get('/backend', (req, res) => {
-    res.json({ message: 'Hello from the backend!' });
-  });
-
 //here we will send from submissions
 app.use('/', formRoutes);
 
-const PORT = process.env.PORT_SERVER || 5000;
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+*/

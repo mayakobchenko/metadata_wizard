@@ -32,4 +32,17 @@ router.post('/submit-metadata', async (req, res) => {
   }
 });
 
+// Example GET endpoint
+router.get('/api/data', (req, res) => {
+  res.json({ message: 'Hello from Express' });
+  console.log(`${req.method} ${req.url}`);
+});
+
+// Example POST endpoint
+router.post('/api/data', (req, res) => {
+  const data = req.body;
+  console.log('Received data:', data);
+  res.status(200).json({ status: 'success test', received: data });
+});
+
 export default router;

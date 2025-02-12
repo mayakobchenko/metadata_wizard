@@ -112,8 +112,11 @@ npm cache clean --force
 react@^19.0.0 react-dom@^19.0.0
 ----------------------------------
 
-deleted everything from the repo and reinstall react first, then I will integrate express server.
+I deleted everything from the repo and reinstall react first, then I will integrate express server.
 $ npx create-react-app .
+
+to start the frontend:
+$ npm start
 
 $ cd server
 $ npm init -y
@@ -130,4 +133,88 @@ $ npm install --save-dev nodemon
 $ npm install cors
 $ npm install winston
 
+To start the backend server:
 $ npm run dev
+
+react find in .env file PORT=4000 and starts by default there
+
+to change: $ set PORT=4000 && npm start
+
+$ npm install antd    --> 8 vulnerabilities (2 moderate, 6 high)
+$ npm install -g npm@11.0.0
+
+$ npm cache verify
+
+const Component = () => {
+  // Potential additional logic here
+  return (
+    <>
+      {/* JSX */}
+    </>
+  );
+};
+
+https://metadata-wizard.apps.ebrains.eu/?TicketNumber=4823798
+
+target="_blank" in ref
+
+when react rerender: https://react.dev/reference/react/memo
+
+export default - is the main parent component
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+
+always try to avoid redundant state
+-----------------------------
+
+When you're using ECMAScript modules (ESM) in Node.js, 
+the __dirname and __filename globals are not available by default
+
+display: block , inline-block 
+------------------------------------------------------------------------------------------------
+Running a React application and an Express server on the same port involves integrating them 
+so that the React app acts as the frontend while the Express server provides the backend services. 
+This setup requires a proxy mechanism during development and possibly serving the React app 
+from the Express server in production.
+Set up proxying in your React app's package.json to handle API requests during development.
+Add to package.json of your React app: "proxy": "http://localhost:5000"
+This proxy setting will forward any unmatched request 
+(i.e., requests that are not for your React app's pages) to the backend Express server.
+
+run the express server:
+node server/index.js
+in another terminal run react:
+npm start
+------------------------------------------------------------------------------------------------
+Development: Requests to /api/data will be forwarded to the Express server by the proxy.
+Production: The React app's static files are served by Express, and it also handles API requests via /api
+-------------------------------------------
+to test post request in PowerShell:
+$headers = @{"Content-Type" = "application/json"}
+$body = @{
+     message = "Application is running"}
+$jsonBody = $body | ConvertTo-Json
+Invoke-RestMethod -Uri "http://localhost:5000/api/data" -Method POST -Headers $headers -Body $jsonBody
+
+--------------------------------------------------
+to test get request in PowerShell:
+$headers = @{"Content-Type" = "application/json"}
+Invoke-RestMethod -Uri "http://localhost:5000/api/data" -Method GET
+--------------------------------------------------
+to test form submission post request:
+$headers = @{"Content-Type" = "application/json"}
+>> $body = @{
+>>      message = "Application is running"}
+>> $jsonBody = $body | ConvertTo-Json
+>> Invoke-RestMethod -Uri "http://localhost:5000/submit-metadata" -Method POST -Headers $headers -Body $jsonBody
+
+---------------------------
+
+$ npm install redux react-redux
+https://redux.js.org/tutorials/essentials/part-1-overview-concepts
+
+https://rjsf-team.github.io/react-jsonschema-form/docs/
+
+nice docs about css and html:
+https://internetingishard.netlify.app/html-and-css/index.html
