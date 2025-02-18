@@ -218,3 +218,10 @@ https://rjsf-team.github.io/react-jsonschema-form/docs/
 
 nice docs about css and html:
 https://internetingishard.netlify.app/html-and-css/index.html
+
+node --trace-deprecation
+
+in package.json
+ you can"start": "node --trace-deprecation ./node_modules/react-scripts/bin/react-scripts.js start",
+
+ https://nodejs.org/en/blog/vulnerability/january-2025-security-releases

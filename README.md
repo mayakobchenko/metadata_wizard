@@ -16,3 +16,8 @@ $body = @{
  }
 $jsonBody = $body | ConvertTo-Json
 ```
+
+run the express server:
+node server/index.js
+in another terminal run react:
+npm start

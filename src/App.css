@@ -1,3 +1,9 @@
+/*removes the default margin and padding*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 /* Add some variables containing theme colors and page layout */
 :root{
   --form-background-color: #F5F7FA; /* original: ebebeb alternative: F5F7FA ffffff */ 
